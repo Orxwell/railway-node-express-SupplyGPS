@@ -4,8 +4,7 @@
   "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-pro": "node ./src/index.mjs",
-    "start-dev": "node ./src/index.mjs"
+    "start": "node ./src/index.mjs"
   },
   "keywords": [],
   "author": "OrxwellDev",
