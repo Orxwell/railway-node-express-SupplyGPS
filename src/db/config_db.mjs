@@ -14,4 +14,3 @@ const client = new MongoClient(cacheURI, {
 });
 
 export default client;
-

@@ -88,7 +88,7 @@ main {
   background-size: 140px 120px;
 }
 
-section {
+section {  
   align-self: center;
   justify-self: center;
 }
@@ -104,14 +104,13 @@ section {
 
 .container {
   width: 280px;
-  height: -webkit-fill-available;
+  height: 350px;
 
   justify-content: center;
 
   background-color: grey;
 
   outline: 6px dashed rgb(20, 70, 45, 0.95);
-  
 }
 
 #info {
@@ -129,6 +128,8 @@ section {
   background-color: rgba(20, 20, 38, 0.98);
 
   padding: 10px;
+
+  border-radius: 50px 50px 50px 50px;
 }
 
 #more-info {
@@ -147,9 +148,13 @@ section {
   background-color: #333;
 
   padding: 10px;
+
+  border-radius: 0px 50px 50px 0px;
 }
 
 #info.move-to-left {
+  border-radius: 50px 10px 10px 50px;
+  
   transform: translate(-100%, -50%);
 
   animation: moveToLeft 1s ease;
@@ -160,13 +165,29 @@ section {
 }
 
 @keyframes moveToLeft {
-  from { transform: translate(-50%, -50%) ; }
-  to   { transform: translate(-100%, -50%); }
+  from {
+    border-radius: 50px 50px 50px 50px;
+    
+    transform: translate(-50%, -50%);
+  }
+  to {
+    border-radius: 50px 10px 10px 50px;
+    
+    transform: translate(-100%, -50%);
+  }
 }
 
 @keyframes moveToCenter {
-  from { transform: translate(-100%, -50%); }
-  to   { transform: translate(-50%, -50%) ; }
+  from {
+    border-radius: 50px 10px 10px 50px;
+    
+    transform: translate(-100%, -50%);
+  }
+  to {
+    border-radius: 50px 50px 50px 50px;
+    
+    transform: translate(-50%, -50%);
+  }
 }
 
 #more-info.show {
