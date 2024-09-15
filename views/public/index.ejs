@@ -10,7 +10,7 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="/static/icon/icon.ico"
+      href="/static/icon/favicon.ico"
     />
 
     <link
@@ -23,25 +23,104 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <header class="glass">
-        <h1>{ Soy un texto de ejemplo }</h1>
-        <p>Bienvenido a la página principal.</p>
-      </header>
+    <header>
+      <h1>{ Nombre del Sitio }</h1>
+      <p>Bienvenido a la página principal.</p>
+    </header>
 
-      <nav class="glass">
-        <a href="/login">Logearme</a>
-        <a href="/register">Registrarme</a>
-      </nav>
+    <nav>
+      <a href="/login">Logearme</a>
+      <a href="/register">Registrarme</a>
+    </nav>
 
-      <main class="glass">
-        <h2></h2>
-        <p></p>
-      </main>
-    <div>
+    <main>
+      <div class="wrapper">
+        <section id="info" class="container info">
+          <h2>{ Subtítulo }</h2>
+          <p>Esto es un apartado para que pongas contenido en la página principal.</p>
+          
+          <hr/>
 
+          <h2>{ Subtítulo }</h2>
+          <p>Esto es un apartado para que pongas contenido en la página principal.</p>
+          
+
+          <hr/>
+          
+          <button id="toggle">Clícame</button>
+        </section>
+
+        <section id="more-info" class="container more-info">
+          <h2>{ Subtítulo }</h2>
+          <p>Esto es un apartado para que pongas contenido en la página principal.</p>
+        </section>
+      </div>
+    </main>
+    
     <footer>
       <p>Hey, soy un texto para decirte que esto tiene copyright. Si intentas lo que sea te demando.</p>
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const divInfo     = document.getElementById('info')     ;
+        const divMoreInfo = document.getElementById('more-info');
+        
+        const buttonToggle = document.getElementById('toggle');
+
+        buttonToggle.addEventListener('click', () => {
+          buttonToggle.disabled = true;
+          
+          const bool = divMoreInfo.classList.contains('show');
+
+          if (bool) {
+            divInfo.classList.add('move-to-center') ;
+            divInfo.classList.remove('move-to-left');
+
+            divMoreInfo.classList.add('hide')   ;
+            divMoreInfo.classList.remove('show');
+            
+            setTimeout(() => {
+              divInfo.classList.remove('move-to-center');
+
+              divMoreInfo.style.display = 'none';
+              divMoreInfo.classList.remove('hide');
+
+              buttonToggle.disabled = false;
+            }, 1000);
+          } else {
+            divInfo.classList.add('move-to-left');
+            
+            divMoreInfo.style.display = 'flex';
+            divMoreInfo.classList.add('show');
+
+            setTimeout(() => {
+              buttonToggle.disabled = false;
+            }, 1000);
+          }
+        })
+      });
+
+      window.onload = function() {
+        const [header, nav, footer, main] = [
+          document.querySelector('header'),
+          document.querySelector('nav')   ,
+          document.querySelector('footer'),
+          document.querySelector('main')
+        ];
+
+        function ajustHeightMain() {
+          const avaliableHeight = window.innerHeight
+            - header.offsetHeight
+            - nav.offsetHeight
+            - footer.offsetHeight;
+          
+          main.style.height = `${avaliableHeight}px`;
+        }
+
+        ajustHeightMain();
+        window.addEventListener('resize', ajustHeightMain);
+      }
+    </script>
   </body>
 </html>
