@@ -11,6 +11,8 @@ body {
   background-color: rgb(162, 174, 174);
 }
 
+
+
 header {
   width: 100vw;
   height: clamp(80px, 10vw, 100px);
@@ -62,18 +64,7 @@ main {
   display: flex;
   flex-direction: column;
   align-self: center;
-  justify-self: right;
-
-  gap: 3vh;
-}
-
-aside {
-  grid-area: b;
-
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-self: left;
+  justify-self: center;
 }
 
 section {
@@ -125,11 +116,9 @@ footer p {
 
   display: grid;
   grid-template-areas:
-    "a b";
+    "a";
   
   border: 1px solid #ccc;
-
-  gap: 3vh;
 
   background-color: wheat;
   background-image:
@@ -230,65 +219,6 @@ a:hover {
   color: rgb(255 255 255);
 }
 
-button {
-  cursor: pointer;
-
-  background-color: rgb(24, 21, 15);
-  color: rgb(212, 188, 144);
-
-  font-size: clamp(14px, 1.5vw, 18px);
-
-  width: fit-content;
-
-  align-self: center;
-  justify-self: center;
-
-  text-decoration: none;
-
-  padding: 3px 15px 6px 15px;
-
-  border-radius: 20px;
-
-  transition: box-shadow 0.2s ease-in, box-shadow 0.3s ease-out;
-}
-
-button:hover {
-  background-color: rgb(68, 43, 2);
-
-  box-shadow: 0 0 5px 1px rgb(243, 237, 228);
-}
-
 ::-webkit-scrollbar {
   display: none;
-}
-
-@media (max-width: 710px) {
-  header {
-    height: 80px;
-  }
-
-  main {
-    justify-self: center;
-  }
-
-  aside {
-    justify-self: center;
-  }
-
-  .wrapper {
-    display: grid;
-    grid-template-areas:
-      "a"
-      "b";
-
-    gap: 0;
-  }
-  
-  h1 {
-    font-size: 20px;
-  }
-
-  p {
-    font-size: 12px;
-  }
 }

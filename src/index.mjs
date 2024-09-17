@@ -9,7 +9,8 @@ const app  = express();
 const PORT = process.env.PORT || 5050;
 
 import {
-  indexEJS, loginEJS, registerEJS
+  indexEJS, loginEJS, registerEJS,
+  chickenCatalogEJS, fishCatalogEJS
 } from './paths/pathsEJS.mjs';
 
 app.set('view engine', ejs);
@@ -33,6 +34,24 @@ app.use(express.json())                        ;
       }
       catch (_) { res.sendStatus(503); }
     });
+
+    app.get('/chicken-catalog', (_, res) => {
+      try {
+        res.render(fishCatalogEJS, {
+          title: 'SupplyGPS - Chicken-Catalog',
+        });
+      }
+      catch (_) { res.sendStatus(503); }
+    });
+
+    app.get('/fish-catalog', (_, res) => {
+      try {
+        res.render(chickenCatalogEJS, {
+          title: 'SupplyGPS - Fish-Catalog',
+        });
+      }
+      catch (_) { res.sendStatus(503); }
+    });
     // >>-------- GET - Endpoints - Above --------<<
 
 
@@ -50,10 +69,7 @@ app.use(express.json())                        ;
     // >>-------- POST - Endpoints - Above --------<<
 
     app.listen(PORT, () => {
-      console.log(
-        `\n  ~Servidor web escuchando en puerto [ ${PORT} ]...~` +
-        `\n    -> ( http://127.0.0.1:${PORT} )`
-      );
+      console.log(`  ~Servidor web escuchando en puerto [ ${PORT} ]...~`);
     });
     
   } catch (err) {
