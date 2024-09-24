@@ -57,12 +57,44 @@ nav::after {
 }
 
 main {
-  grid-area: a;
-
-  display: flex;
-  flex-direction: column;
   align-self: center;
   justify-self: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-top: 10px;
+}
+
+label {
+  font-size: clamp(14px, 1.5vmax, 16px);
+  font-weight: 600;
+
+  color: wheat;
+
+  text-decoration: none;
+
+  padding: 10px 5px 10px 5px;
+
+  border-radius: 20px;
+}
+
+.entries {
+  height: 20px;
+
+  text-align: left;
+
+  padding: 2px 8px;
+}
+
+input {
+  border-radius: 10px;
+
+  font-size: max(16px, 2vmin);
 }
 
 section {
@@ -77,11 +109,9 @@ section {
   flex-direction: column;
   align-items: center;
 
-  padding: 15px;
+  padding: 10px;
 
   border-radius: 20px;
-
-  gap: 10px;
 }
 
 footer {
@@ -112,9 +142,9 @@ footer p {
   width: 100%;
   height: 100%;
 
-  display: grid;
-  grid-template-areas:
-    "a";
+  display: flex;
+  align-content: center;
+  justify-content: center;
   
   border: 1px solid #ccc;
 
@@ -174,10 +204,6 @@ h2 {
   font-size: clamp(18px, 3vmax, 20px)
 }
 
-h3 {
-  font-size: clamp(16px, 3vmax, 18px)
-}
-
 p {
   user-select: none;
 
@@ -214,7 +240,33 @@ a {
 }
 
 a:hover {
+  color: rgb(255, 255, 255);
+}
+
+button {
+  background-color: rgb(32, 70, 70);
   color: rgb(255 255 255);
+
+  font-size: clamp(16px, 1.5vw, 18px);
+
+  width: fit-content;
+
+  align-self: center;
+  justify-self: center;
+
+  text-decoration: none;
+
+  padding: 3px 15px 6px 15px;
+
+  border-radius: 20px;
+  border-style: ridge;
+  border-width: 4px;
+
+  transition: background-color 0.2s ease-in, background-color 0.3s ease-out;
+}
+
+button:hover {
+  background-color: rgb(58, 99, 99);
 }
 
 ::-webkit-scrollbar {

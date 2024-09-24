@@ -16,7 +16,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="/static/css/chicken_catalog.css"
+      href="/static/css/not_found.css"
     />
 
     <title><%= title %></title>
@@ -24,7 +24,7 @@
 
   <body>
     <header>
-      <h1>{ Sección de Pollos }</h1>
+      <h1>{ VíveresGPS }</h1>
       <p>Tu mercado de confianza local para pedidos en carnes.</p>
     </header>
 
@@ -37,8 +37,8 @@
     <div class="wrapper">
       <main>
         <section class="container">
-          <h2>{ ¡Ups...! }</h2>
-          <p>Estamos trabajando...</p>
+          <h2>{ ¡404...! }</h2>
+          <p>Esta ruta no existe...</p>
         </section>
       </main>
     </div>
@@ -47,6 +47,27 @@
       <p>Hey, soy un texto para decirte que esto tiene copyright. Si intentas lo que sea te demando.</p>
     </footer>
 
-    <script src="/static/js/heightAdjuster.js"></script>
+    <script>
+      window.onload = function() {
+        const [header, nav, div, footer] = [
+          document.querySelector('header')             ,
+          document.querySelector('nav')                ,
+          document.getElementsByClassName('wrapper')[0],
+          document.querySelector('footer')
+        ];
+
+        function ajustDivHeight() {
+          const avaliableHeight = window.innerHeight
+            - header.offsetHeight
+            - nav.offsetHeight
+            - footer.offsetHeight;
+          
+          div.style.height = `${avaliableHeight}px`;
+        }
+
+        ajustDivHeight();
+        window.addEventListener('resize', ajustDivHeight);
+      }
+    </script>
   </body>
 </html>

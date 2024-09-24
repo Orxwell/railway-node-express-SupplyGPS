@@ -11,6 +11,8 @@ body {
   background-color: rgb(162, 174, 174);
 }
 
+
+
 header {
   width: 100vw;
   height: clamp(80px, 10vw, 100px);

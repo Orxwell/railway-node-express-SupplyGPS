@@ -1,0 +1,276 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  height: 100vh;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  overflow-x: hidden;
+
+  background-color: rgb(162, 174, 174);
+}
+
+header {
+  width: 100vw;
+  height: clamp(80px, 10vw, 100px);
+  
+  background-color: rgb(40, 60, 60);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+nav {
+  width: 100vw;
+  height: clamp(30px, 4vw, 40px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  background:
+    linear-gradient(45deg,
+      #dca 12%,
+      transparent 0,
+      transparent 88%,
+      #dca 0),
+    linear-gradient(135deg,
+      transparent 37%,
+      #a85 0,
+      #a85 63%,
+    transparent 0),
+    linear-gradient(45deg,
+      transparent 37%,
+      #dca 0,
+      #dca 63%,
+      transparent 0
+    ) #753;
+    background-size: 5px 5px;
+}
+
+nav::before,
+nav::after {
+  content: '';
+}
+
+main {
+  align-self: center;
+  justify-self: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  gap: max(12px, 2vmin);
+
+  margin-top: 10px;
+}
+
+label {
+  font-size: clamp(14px, 1.5vmax, 16px);
+  font-weight: 600;
+
+  color: wheat;
+
+  text-decoration: none;
+
+  padding: 10px 5px 10px 5px;
+
+  border-radius: 20px;
+}
+
+.entries {
+  height: 20px;
+
+  text-align: left;
+
+  padding: 2px 8px;
+}
+
+input {
+  border-radius: 10px;
+
+  font-size: max(16px, 2vmin);
+}
+
+section {
+  width: max-content;
+  max-width: 300px;
+  height: fit-content;
+
+  align-self: center;
+  justify-self: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 15px;
+
+  border-radius: 20px;
+
+  gap: 10px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  width: 100%;
+  max-height: 5vh;
+
+  background-color: #333;
+  padding: 8px 0px;
+}
+
+footer p {
+  max-width: 90vw;
+
+  font-size: clamp(12px, 1.2vw, 16px);
+
+  align-self: center;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  
+  border: 1px solid #ccc;
+
+  background-color: wheat;
+  background-image:
+    repeating-linear-gradient(
+      120deg,
+      rgb(0 0 0 / 20%),
+      rgb(0 0 0 / 20%) 1px,
+      transparent 1px,
+      transparent 60px),
+    repeating-linear-gradient(
+      60deg,
+      rgb(0 0 0 / 20%),
+      rgb(0 0 0 / 20%) 1px,
+      transparent 1px,
+      transparent 60px),
+    linear-gradient(
+      60deg,
+      rgba(40, 60, 60, .2) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(40, 60, 60, .2) 75%,
+      rgba(40, 60, 60, .2)),
+    linear-gradient(
+      120deg,
+      rgba(40, 60, 60, .2) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(40, 60, 60, .2) 75%,
+      rgba(40, 60, 60, .2));
+  background-size: 140px 120px;
+}
+
+.container {
+  background-color: #3d3d3d;
+
+  outline: 6px dashed rgb(20, 70, 45, 0.95);
+}
+
+h1, h2, h3 {
+  user-select: none;
+
+  align-self: center;
+
+  color: rgb(228, 195, 133);
+
+  margin: 0;
+}
+
+h1 {
+  padding-bottom:  5px;
+  font-size: clamp(22px, 3vmax, 35px)
+}
+
+h2 {
+  font-size: clamp(18px, 3vmax, 20px)
+}
+
+p {
+  user-select: none;
+
+  text-align: center;
+
+  font-style: italic;
+  font-weight: 800;
+  font-size: 16px;
+
+  color: rgb(205, 199, 186);
+  
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+
+  text-align: center;
+
+  padding: 2px 12px 2px 12px;
+  
+  background-color: rgb(40, 60, 60);
+
+  color: rgb(228, 195, 133);
+
+  font-weight: 600;
+  font-size: clamp(14px, 2vw, 16px);
+
+  outline: 1.5px dashed rgb(0, 0, 0);
+
+  border-radius: 10px;
+  
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: rgb(255, 255, 255);
+}
+
+button {
+  background-color: rgb(32, 70, 70);
+  color: rgb(255 255 255);
+
+  font-size: clamp(16px, 1.5vw, 18px);
+
+  width: fit-content;
+
+  align-self: center;
+  justify-self: center;
+
+  text-decoration: none;
+
+  padding: 3px 15px 6px 15px;
+
+  border-radius: 20px;
+  border-style: ridge;
+  border-width: 4px;
+
+  transition: background-color 0.2s ease-in, background-color 0.3s ease-out;
+}
+
+button:hover {
+  background-color: rgb(58, 99, 99);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

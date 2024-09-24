@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/static/icon/favicon.ico"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/static/css/login.css"
+    />
+
+    <title><%= title %></title>
+  </head>
+
+  <body>
+    <header>
+      <h1>{ VíveresGPS }</h1>
+      <p>Tu mercado de confianza local para pedidos en carnes.</p>
+    </header>
+
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/register">Registrarme</a>
+    </nav>
+
+    <div class="wrapper">
+      <main>
+        <section class="container">
+          <h2>{ Logearme }</h2>
+          <form
+            action="/login"
+            method="POST"
+          >
+            <% if (successRegisterFlag) { %>
+              <p style="color: green;">Te has registrado satisfactoriamente.</p>
+            <% } %>
+
+            <% if (errorFlag) { %>
+              <p style="color: red;"><%= errorMessage %></p>
+            <% } %>
+
+            <input
+              id="username"
+              class="entries"
+              type="text"
+              name="username"
+              value="<%= username %>"
+              placeholder="nombre de usuario"
+              required
+            />
+            <% if (userNotExistFlag) { %>
+              <style> #username { border-color: red; } </style>
+            <% } %>
+
+            <input
+              id="password"
+              class="entries"
+              type="password"
+              name="password"
+              placeholder="contraseña"
+              required
+            />
+            <% if (invalidPasswordFlag) { %>
+              <style> #password { border-color: red; } </style>
+            <% } %>
+
+            <div>
+              <label for="checkbox">Mostrar</label>
+              <input
+                id="checkbox"
+                type="checkbox"
+              />
+
+              <script src="/static/js/checkbox.js"></script>
+            </div>
+
+            <button type="submit">{ Acceder }</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>Hey, soy un texto para decirte que esto tiene copyright. Si intentas lo que sea te demando.</p>
+    </footer>
+
+    <script src="/static/js/heightAdjuster.js"></script>
+  </body>
+</html>

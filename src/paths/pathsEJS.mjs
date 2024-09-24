@@ -4,17 +4,24 @@ import { viewsPath } from './utils.mjs';
 const publicViewsPath  = join(viewsPath, '/public') ;
 const privateViewsPath = join(viewsPath, '/private');
 
+
 // PUBLIC EJS
-export const indexEJS    = join(publicViewsPath, '/index.ejs')   ; // INDEX.EJS    - PATH
-export const loginEJS    = join(publicViewsPath, '/login.ejs')   ; // LOGIN.EJS    - PATH
-export const registerEJS = join(publicViewsPath, '/register.ejs'); // REGISTER.EJS - PATH
+export const indexEJS      = join(publicViewsPath, '/index.ejs')     ;
+export const loginEJS      = join(publicViewsPath, '/login.ejs')     ;
+export const registerEJS   = join(publicViewsPath, '/register.ejs')  ;
+export const remembermeEJS = join(publicViewsPath, '/rememberme.ejs');
 // PUBLIC EJS - CATALOGS
 export const chickenCatalogEJS = join(publicViewsPath, '/chicken_catalog.ejs');
 export const fishCatalogEJS    = join(publicViewsPath, '/fish_catalog.ejs')   ;
 // PUBLIC EJS - MANAGER
-export const loginManagerEJS = join(publicViewsPath, '/loginManager.ejs'); // LOGINMANAGER.EJS - PATH
+export const loginManagerEJS = join(publicViewsPath, '/login_manager.ejs');
+
 
 // PRIVATE EJS
-export const dashboardEJS = join(privateViewsPath, '/dashboard.ejs'); // DASHBOARD.EJS - PATH
-export const profileEJS   = join(privateViewsPath, '/profile.ejs')  ; // PROFILE.EJS   - PATH
-export const settingsEJS  = join(privateViewsPath, '/settings.ejs') ; // SETTINGS.EJS  - PATH
+export const dashboardEJS = join(privateViewsPath, '/dashboard.ejs');
+export const profileEJS   = join(privateViewsPath, '/profile.ejs')  ;
+export const settingsEJS  = join(privateViewsPath, '/settings.ejs') ;
+
+
+// HANDLING ERRORS
+export const notFoundEJS = join(publicViewsPath, '/not_found.ejs');
